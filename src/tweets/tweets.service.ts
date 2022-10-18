@@ -13,22 +13,21 @@ export class TweetsService {
   ) {}
 
   create(createTweetDto: CreateTweetDto) {
-    return this.tweetRepository.create(createTweetDto);
+    return this.tweetRepository.save(createTweetDto);
   }
-
   findAll() {
     return this.tweetRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} tweet`;
+    return this.tweetRepository.findOneBy({id: id});
   }
 
   update(id: number, updateTweetDto: UpdateTweetDto) {
-    return `This action updates a #${id} tweet`;
+    return this.tweetRepository.update(id, updateTweetDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} tweet`;
+    return this.tweetRepository.delete(id);
   }
 }

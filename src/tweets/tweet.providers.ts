@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { Tweet } from './tweet.entity';
+import { Tweet } from './entities/tweet.entity';
 
 export const tweetProviders = [
   {
